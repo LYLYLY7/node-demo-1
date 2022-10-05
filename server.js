@@ -4,7 +4,7 @@ var url = require('url')
 var port = process.argv[2]
 
 if(!port){
-  console.log('请指定端口号好不啦？\n 例如：node server.js 8888 ')
+  console.log('请指定端口号\n 例如：node server.js 8888 ')
   process.exit(1)
 }
 
@@ -24,15 +24,7 @@ var server = http.createServer(function(request, response){
   if(path === '/'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`
-    <!DOCTYPE html>
-    <head>
-        <link rel="stylesheet" hre="/">
-    </head>
-    <body>
-        <h1>标题</h1>
-    </body>
-    `);
+    response.write(`hello`);
     response.end();
   } else if(path === '/'){
     response.statusCode = 200
